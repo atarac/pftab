@@ -1,0 +1,23 @@
+.tab-menu {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	li {
+		list-style: none;
+		min-width: 100px;
+		margin-right: 6px;
+		padding: 8px 5px;
+		text-align: center;
+		background-color: #cdcdcd;
+		&:last-of-type {
+			margin-right: 0px;
+		}
+	}
+}
+
+.tab-content {
+	> div {
+		min-height: 200px;
+		border:dotted 1px #999
+	}
+}
