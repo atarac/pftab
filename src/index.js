@@ -1,11 +1,11 @@
 import { registerBlockType } from '@wordpress/blocks';
 
-import './style.scss';
-import Edit from './edit';
-import save from './save';
-import metadata from './block.json';
+import './tab-container/style.scss';
+import editTabContainer from './tab-container/edit';
+import saveTabContainer from './tab-container/save';
+import metadataTabContainer from './tab-container/block.json';
 
-registerBlockType( metadata.name, {
-	edit: Edit,
-	save,
-} );
+registerBlockType(metadataTabContainer.name, {
+	edit: editTabContainer,
+	save: saveTabContainer,
+});
