@@ -1,8 +1,8 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "create-block/pftab",
-	"version": "0.1.0",
+	"name": "create-block/tab-container",
+	"version": "1.0.0",
 	"title": "タブ",
 	"category": "text",
 	"icon": "smiley",

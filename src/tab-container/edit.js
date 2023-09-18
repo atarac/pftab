@@ -48,37 +48,55 @@
 // 	);
 // }
 
+// import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+
+// export default function Edit() {
+// 	const blockProps = useBlockProps();
+
+// 	const tabs = Array.from({ length: 10 }, (_, i) => i + 1);
+
+// 	return (
+// 		<div {...blockProps}>
+// 			<div className="tab-container">
+// 				{/* Tab Titles Here. They could be dynamic or static depending on your need */}
+// 				<div className="tab-menu">
+// 					{tabs.map((tabNumber) => (
+// 						<div key={`menu-${tabNumber}`} className={`tab-menu-item tab-menu-item-${tabNumber}`}>
+// 							{/* Your menu content for each tab here */}
+// 							Menu {tabNumber}
+// 						</div>
+// 					))}
+// 				</div>
+// 				<div className="tab-content">
+// 					{/* Tab content */}
+// 					<InnerBlocks
+// 						allowedBlocks={['create-block/individual-tab']}
+// 						template={tabs.map((tabNumber) => [
+// 							'create-block/individual-tab',
+// 							{ tabNumber }, // pass tabNumber as an attribute if needed
+// 						])}
+// 					/>
+// 					<InnerBlocks />
+// 				</div>
+// 			</div>
+// 		</div>
+// 	);
+// }
+
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+
+import './editor.scss';
 
 export default function Edit() {
 	const blockProps = useBlockProps();
-
-	const tabs = Array.from({ length: 10 }, (_, i) => i + 1);
+	const ALLOWED_BLOCKS = [ 'my-plugin/individual-tab' ];
 
 	return (
 		<div {...blockProps}>
-			<div className="tab-container">
-				{/* Tab Titles Here. They could be dynamic or static depending on your need */}
-				<div className="tab-menu">
-					{tabs.map((tabNumber) => (
-						<div key={`menu-${tabNumber}`} className={`tab-menu-item tab-menu-item-${tabNumber}`}>
-							{/* Your menu content for each tab here */}
-							Menu {tabNumber}
-						</div>
-					))}
-				</div>
-				<div className="tab-content">
-					{/* Tab content */}
-					<InnerBlocks
-						// allowedBlocks={['create-block/individual-tab']}
-						// template={tabs.map((tabNumber) => [
-						// 	'create-block/individual-tab',
-						// 	{ tabNumber }, // pass tabNumber as an attribute if needed
-						// ])}
-					/>
-					<InnerBlocks />
-				</div>
-			</div>
+			<InnerBlocks
+				allowedBlocks={ ALLOWED_BLOCKS }
+			/>
 		</div>
 	);
 }
+
