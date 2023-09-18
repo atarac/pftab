@@ -13,6 +13,7 @@
  */
 
 function create_block_pf_tab_block_init() {
-	register_block_type( __DIR__ . '/build' );
+	register_block_type( __DIR__ . '/build/tab-container' );
+	register_block_type( __DIR__ . '/build/individual-tab' );
 }
 add_action( 'init', 'create_block_pf_tab_block_init' );
