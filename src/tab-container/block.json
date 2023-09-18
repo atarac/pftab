@@ -91,6 +91,9 @@
 		"text10": {
 			"type": "string",
 			"default": ""
+		},
+		"className": {
+			"type": "string"
 		}
 	},
 	"textdomain": "pf-tab",

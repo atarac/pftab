@@ -6,7 +6,7 @@
 
 // import './editor.scss';
 
-// const ALLOWED_BLOCKS = ['your-namespace/individual-tab-block']
+// const ALLOWED_BLOCKS = ['create-block/individual-tab-block']
 
 // export default function Edit( { attributes, setAttributes } ) {
 // 	const blockProps = useBlockProps();
@@ -32,17 +32,6 @@
 // 				})}
 // 			</ul>
 // 			<div class="tab-content">
-// 				{Array.from({ length:10 }, (_, i) => i + 1).map((num) =>{
-// 					const textName = `text${num}`;
-// 						return (
-// 							<div
-// 								key={textName}
-// 								className={`text-${num}`}
-// 							>
-// 								<InnerBlocks />
-// 							</div>
-// 						);
-// 				})}
 // 			</div>
 // 		</div>
 // 	);
@@ -60,25 +49,21 @@ export default function Edit() {
 	return (
 		<div {...blockProps}>
 			<div className="tab-container">
-				{/* Tab Titles Here. They could be dynamic or static depending on your need */}
 				<div className="tab-menu">
 					{tabs.map((tabNumber) => (
 						<div key={`menu-${tabNumber}`} className={`tab-menu-item tab-menu-item-${tabNumber}`}>
-							{/* Your menu content for each tab here */}
-							Menu {tabNumber}
+							Menu{tabNumber}
 						</div>
 					))}
 				</div>
 				<div className="tab-content">
-					{/* Tab content */}
 					<InnerBlocks
-						// allowedBlocks={['create-block/individual-tab']}
-						// template={tabs.map((tabNumber) => [
-						// 	'create-block/individual-tab',
-						// 	{ tabNumber }, // pass tabNumber as an attribute if needed
-						// ])}
+						allowedBlocks={['create-block/individual-tab']}
+						template={tabs.map((tabNumber) => [
+							'create-block/individual-tab',
+							{ tabNumber },
+						])}
 					/>
-					<InnerBlocks />
 				</div>
 			</div>
 		</div>
