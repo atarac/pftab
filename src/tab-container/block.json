@@ -5,9 +5,8 @@
 	"version": "1.0.0",
 	"title": "タブ",
 	"category": "text",
-	"icon": "smiley",
+	"icon": "feedback",
 	"description": "タブブロックをつくります。",
-	"example": {},
 	"supports": {
 		"html": false
 	},
@@ -51,46 +50,6 @@
 		"menu10": {
 			"type": "string",
 			"default": "menu10"
-		},
-		"text1": {
-			"type": "string",
-			"default": ""
-		},
-		"text2": {
-			"type": "string",
-			"default": ""
-		},
-		"text3": {
-			"type": "string",
-			"default": ""
-		},
-		"text4": {
-			"type": "string",
-			"default": ""
-		},
-		"text5": {
-			"type": "string",
-			"default": ""
-		},
-		"text6": {
-			"type": "string",
-			"default": ""
-		},
-		"text7": {
-			"type": "string",
-			"default": ""
-		},
-		"text8": {
-			"type": "string",
-			"default": ""
-		},
-		"text9": {
-			"type": "string",
-			"default": ""
-		},
-		"text10": {
-			"type": "string",
-			"default": ""
 		},
 		"className": {
 			"type": "string"

@@ -5,15 +5,15 @@
 	"version": "1.0.0",
 	"title": "個別タブ",
 	"category": "text",
-	"icon": "smiley",
+	"icon": "edit",
 	"description": "タブコンテナ専用ブロックです。",
-	"example": {},
 	"supports": {
-		"html": false
+		"html": false,
+		"inserter": false
 	},
 	"attributes": {
-		"tabName": {
-			"type": "string"
+		"tabNumber": {
+			"type": "number"
 		}
 	},
 	"textdomain": "pf-tab",

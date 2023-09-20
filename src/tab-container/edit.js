@@ -1,9 +1,6 @@
-// import {
-// 	RichText,
-// 	InnerBlocks,
-// 	useBlockProps
-// } from '@wordpress/block-editor';
+import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
+<<<<<<< HEAD
 // import './editor.scss';
 
 // const ALLOWED_BLOCKS = ['create-block/individual-tab-block']
@@ -42,29 +39,42 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import './editor.scss';
 
 export default function Edit() {
+=======
+export default function Edit({ attributes, setAttributes }) {
+>>>>>>> development3
 	const blockProps = useBlockProps();
-
 	const tabs = Array.from({ length: 10 }, (_, i) => i + 1);
 
 	return (
 		<div {...blockProps}>
 			<div className="tab-container">
 				<div className="tab-menu">
-					{tabs.map((tabNumber) => (
-						<div key={`menu-${tabNumber}`} className={`tab-menu-item tab-menu-item-${tabNumber}`}>
-							Menu{tabNumber}
-						</div>
-					))}
+					{tabs.map((tabNumber) => {
+						const menuName = `menu${tabNumber}`;
+						return (
+							<RichText
+								key={menuName}
+								tagName='li'
+								className={menuName}
+								value={attributes[menuName]}
+								onChange={(newMenuName) =>
+									setAttributes({
+										[menuName]: newMenuName,
+									})
+								}
+							/>
+						);
+					})}
 				</div>
-				<div className="tab-content">
+        <div className="tab-contents">
 					<InnerBlocks
 						allowedBlocks={['create-block/individual-tab']}
-						template={tabs.map((tabNumber) => [
+						template={Array.from({ length: 10 }, (_, index) => [
 							'create-block/individual-tab',
-							{ tabNumber },
+							{ tabNumber: index + 1 },
 						])}
 					/>
-				</div>
+        </div>
 			</div>
 		</div>
 	);
