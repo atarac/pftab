@@ -20,9 +20,9 @@ export default function Save( { attributes } ) {
             );
           })}
         </div>
-				<div className="tab-content">
-					<InnerBlocks.Content />
-				</div>
+        <div className="tab-contents">
+          <InnerBlocks.Content />
+        </div>
       </div>
     </div>
   );

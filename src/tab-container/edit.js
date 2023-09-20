@@ -25,15 +25,15 @@ export default function Edit({ attributes, setAttributes }) {
 						);
 					})}
 				</div>
-				<div className="tab-content">
+        <div className="tab-contents">
 					<InnerBlocks
 						allowedBlocks={['create-block/individual-tab']}
-						template={tabs.map((tabNumber) => [
+						template={Array.from({ length: 10 }, (_, index) => [
 							'create-block/individual-tab',
-							{ tabNumber },
+							{ tabNumber: index + 1 },
 						])}
 					/>
-				</div>
+        </div>
 			</div>
 		</div>
 	);

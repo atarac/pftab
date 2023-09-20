@@ -12,8 +12,8 @@
 		"inserter": false
 	},
 	"attributes": {
-		"tabName": {
-			"type": "string"
+		"tabNumber": {
+			"type": "number"
 		}
 	},
 	"textdomain": "pf-tab",
