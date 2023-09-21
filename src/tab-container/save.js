@@ -1,7 +1,7 @@
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
 export default function Save( { attributes } ) {
-  const blockProps = useBlockProps.save(); // 注意: save 関数を使用する
+  const blockProps = useBlockProps.save();
   const tabs = Array.from({ length: 10 }, (_, i) => i + 1);
   
   return (
