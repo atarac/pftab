@@ -1,29 +1,29 @@
-import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, RichText } from '@wordpress/block-editor';
 
-export default function Save( { attributes } ) {
-  const blockProps = useBlockProps.save();
-  const tabs = Array.from({ length: 10 }, (_, i) => i + 1);
-  
-  return (
-    <div {...blockProps}>
-      <div className="tab-container">
-        <div className="tab-menu">
-          {tabs.map((tabNumber) => {
-            const menuName = `menu${tabNumber}`;
-            return (
-              <RichText.Content
-                tagName="li"
-                className={menuName}
-                value={attributes[menuName]}
-                key={menuName}
-              />
-            );
-          })}
-        </div>
-        <div className="tab-contents">
-          <InnerBlocks.Content />
-        </div>
-      </div>
-    </div>
-  );
+export default function Save({ attributes }) {
+	const { numberToDisplay, activeTab } = attributes;
+	const tabs = Array.from({ length: 10 }, (_, i) => i + 1);
+
+	return (
+		<div className="wp-block-your-block-name">
+			<div className="tab-container">
+				<div className="tab-menu">
+					{tabs.slice(0, numberToDisplay).map((tabNumber) => {
+						const menuName = `menu${tabNumber}`;
+						return (
+							<RichText.Content
+								key={menuName}
+								tagName='li'
+								className={`${menuName} ${activeTab === tabNumber ? 'active' : ''}`}
+								value={attributes[menuName]}
+							/>
+						);
+					})}
+				</div>
+				<div className="tab-contents ">
+					<InnerBlocks.Content />
+				</div>
+			</div>
+		</div>
+	);
 }

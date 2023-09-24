@@ -14,6 +14,9 @@
 	"attributes": {
 		"tabNumber": {
 			"type": "number"
+		},
+		"isActive": {
+			"type": "number"
 		}
 	},
 	"textdomain": "individual-tab",

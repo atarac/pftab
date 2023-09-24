@@ -51,8 +51,13 @@
 			"type": "string",
 			"default": "menu10"
 		},
-		"className": {
-			"type": "string"
+		"numberToDisplay": {
+			"type": "number",
+			"default": 10
+		},
+		"activeTab": {
+			"type": "number",
+			"default": 1
 		}
 	},
 	"textdomain": "tab-container",

@@ -11,11 +11,14 @@
 		margin-bottom: 0;
 		padding: 8px 6px;
 		text-align: center;
-		background-color: #007CBA;
+		background-color: #999;
 		font-size: 16px;
 		color: #FFF;
 		cursor: pointer;
 		transition: 0.5s;
+		&.active {
+			background-color: #007CBA;
+		}
 		&:last-of-type {
 			margin-right: 0px;
 		}
@@ -26,5 +29,9 @@
 		min-height: 200px;
 		margin-top: 0;
 		margin-bottom: 0;
-		border:solid 1px #007CBA
+		border:solid 1px #007CBA;
+		display: none;
+		&.active {
+			display: block;
+		}
 }
